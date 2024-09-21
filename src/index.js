@@ -1,0 +1,19 @@
+import'./scss/main.scss';
+import {SpyneApp} from 'spyne';
+import {AppView} from './app/app-view';
+
+const imgPath = IMG_PATH || undefined;
+const config = {
+  debug:true,
+  strict: true,
+  IMG_PATH
+};
+
+SpyneApp.init(config);
+
+if (process.env.NODE_ENV === 'development') {
+  //const {SpynePluginConsole} = require('spyne-plugin-console');
+  //new SpynePluginConsole({position: ['bottom', 'right'], minimize: true});
+}
+
+new AppView().prependToDom(document.body);
