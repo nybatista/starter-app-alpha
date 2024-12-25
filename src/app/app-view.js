@@ -29,7 +29,6 @@ export class AppView extends ViewStream {
 
     this.appendView(helloWorldView);
 
-    console.log("IMG PATH ",IMG_PATH);
   }
 
   onRendered() {

@@ -34,6 +34,7 @@ module.exports = (env={mode:"development"})=> {
     },
 
     output: {
+      path: path.resolve(__dirname, 'dist'),
       filename: `${_assetsFolder}js/[name].js`,
       publicPath: _publicPath,
       clean: true
@@ -129,7 +130,7 @@ module.exports = (env={mode:"development"})=> {
         plugins: path.resolve(__dirname, 'src/plugins/'),
         imgs: path.resolve(__dirname, 'src/static/imgs/'),
         fonts: path.resolve(__dirname, 'src/static/fonts/'),
-        data: path.resolve(__dirname, '/./src/static/data/'),
+        data: path.resolve(__dirname, 'src/static/data/'),
         css: path.resolve(__dirname, 'src/css/'),
         core: path.resolve(__dirname, 'src/core/'),
         traits: path.resolve(__dirname, 'src/app/traits/'),
@@ -152,7 +153,7 @@ const getWebpackPlugins = ()=> {
 
   const miniCssPlugin = ()=> {
     return new MiniCssExtractPlugin({
-      filename: `${_assetsFolder}/css/main.css`
+      filename: `${_assetsFolder}css/main.css`
     });
   }
 
