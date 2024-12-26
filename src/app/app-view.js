@@ -1,11 +1,11 @@
-import {ViewStream} from 'spyne';
+import { ViewStream } from 'spyne';
+import helloWorldTmpl from './hello-world.tmpl.html';
 
 export class AppView extends ViewStream {
-
   constructor(props = {}) {
-    props.tagName='main';
-    props.id='app-main';
-    props.class='main';
+    props.tagName = 'main';
+    props.id = 'app-main';
+    props.class = 'main';
     super(props);
   }
 
@@ -13,26 +13,23 @@ export class AppView extends ViewStream {
     return [];
   }
 
-
   broadcastEvents() {
     return [];
   }
 
-  addHelloWorld(){
+  addHelloWorld() {
     const helloWorldView = new ViewStream({
       data: {
-        msg: "Hello World",
-        img: "imgs/noun-robot.png"
+        msg: 'Hello World',
+        img: 'imgs/noun-robot.png',
       },
-      template: require('./hello-world.tmpl.html')
-    })
+      template: helloWorldTmpl,
+    });
 
     this.appendView(helloWorldView);
-
   }
 
   onRendered() {
     this.addHelloWorld();
   }
-
 }

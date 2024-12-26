@@ -1,9 +1,9 @@
-@import "01-vendors/normalize.css";
-@import "02-variables/mixins.scss";
+@import '01-vendors/normalize.css';
+@import '02-variables/mixins.scss';
 
 body {
   font-family: sans-serif;
-  background: #CBD2D9;
+  background: #cbd2d9;
   display: flex;
   position: relative;
   width: 100%;
@@ -15,5 +15,4 @@ body {
   main {
     padding: 1rem;
   }
-
 }

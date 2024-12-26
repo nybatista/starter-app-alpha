@@ -7,4 +7,5 @@ admin
 app/*
 !app/.gitkeep
 dist/*
+src/tests/results/*
 !dist/.gitkeep
