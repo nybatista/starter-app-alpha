@@ -16,7 +16,7 @@
   "dependencies": {
     "ramda": "^0.30.1",
     "rxjs": "^7.8.1",
-    "spyne": "^0.19.1"
+    "spyne": "^0.20.1"
   },
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",

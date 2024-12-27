@@ -23,6 +23,7 @@ export class AppView extends ViewStream {
         msg: 'Hello World',
         img: 'imgs/noun-robot.png',
       },
+      style: 'background:orange',
       template: helloWorldTmpl,
     });
 
