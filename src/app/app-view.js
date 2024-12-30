@@ -1,5 +1,5 @@
 import { ViewStream } from 'spyne';
-import helloWorldTmpl from './hello-world.tmpl.html';
+import HelloWorldTmpl from './hello-world.tmpl.html';
 
 export class AppView extends ViewStream {
   constructor(props = {}) {
@@ -23,8 +23,7 @@ export class AppView extends ViewStream {
         msg: 'Hello World',
         img: 'imgs/noun-robot.png',
       },
-      style: 'background:orange',
-      template: helloWorldTmpl,
+      template: HelloWorldTmpl,
     });
 
     this.appendView(helloWorldView);
