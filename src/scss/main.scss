@@ -1,5 +1,5 @@
-@import '01-vendors/normalize.css';
-@import '02-variables/mixins.scss';
+@use '01-vendors/normalize.css';
+@use '02-variables/mixins.scss';
 
 body {
   font-family: sans-serif;
