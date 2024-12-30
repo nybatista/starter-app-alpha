@@ -13,6 +13,7 @@
     "format": "prettier --write 'src/**/*.{js,css,scss,html}'"
   },
   "dependencies": {
+    "dompurify": "^3.2.3",
     "ramda": "^0.30.1",
     "rxjs": "^7.8.1",
     "spyne": "^0.20.4"
