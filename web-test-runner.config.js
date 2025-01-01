@@ -2,7 +2,7 @@ import { defaultReporter } from '@web/test-runner';
 import { junitReporter } from '@web/test-runner-junit-reporter';
 
 export default {
-  files: ['src/tests/unit-tests/**/*.test.js'],  // or however your tests are organized
+  files: ['src/tests/unit-tests/**/*.test.js'], // or however your tests are organized
 
   testFramework: {
     config: {

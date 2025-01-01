@@ -1,7 +1,6 @@
 import './scss/main.scss';
 import { SpyneApp } from 'spyne';
 import { AppView } from './app/app-view.js';
-import { SpynePluginConsole } from 'spyne-plugin-console';
 
 const config = {
   debug: true,
@@ -11,9 +10,14 @@ const config = {
 SpyneApp.init(config);
 
 if (process.env.NODE_ENV === 'development') {
-  SpyneApp.registerPlugin(
-    new SpynePluginConsole({ position: ['bottom', 'right'], minimize: false }),
-  );
+  import('spyne-plugin-console').then(({ SpynePluginConsole }) => {
+    SpyneApp.registerPlugin(
+      new SpynePluginConsole({
+        position: ['bottom', 'right'],
+        minimize: false,
+      }),
+    );
+  });
 }
 
-new AppView().prependToDom(document.body);
+new AppView().prependToDom(document.querySelector('body'));

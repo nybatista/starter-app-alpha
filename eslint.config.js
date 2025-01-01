@@ -1,35 +1,38 @@
-// eslint.config.js (flat config)
-import js from "@eslint/js";
-import prettierPlugin from "eslint-plugin-prettier";
+import js from '@eslint/js';
+import prettierPlugin from 'eslint-plugin-prettier';
+import mochaPlugin from 'eslint-plugin-mocha';
+import globals from 'globals';
 
 export default [
   {
-    ignores: ["node_modules/", "dist/"],
+    ignores: ['node_modules/', 'dist/'],
   },
   {
-    files: ["**/*.js"],
+    files: ['**/*.js'],
 
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       globals: {
-        process: "readonly",
-        require: "readonly",
+        // typical browser + Node + Mocha globals
+        ...globals.browser,
+        ...globals.node,
+        ...globals.mocha,
       },
     },
 
-    // Register the plugin
+    // Register both Prettier & Mocha plugins
     plugins: {
       prettier: prettierPlugin,
+      mocha: mochaPlugin,
     },
 
-    // Combine ESLint’s recommended + Prettier’s recommended
+    // Merge ESLint’s recommended rules, Prettier’s recommended rules,
+    // and Mocha’s recommended rules
     rules: {
-      ...js.configs.recommended.rules,       // "eslint:recommended"
-      ...prettierPlugin.configs.recommended.rules, // "plugin:prettier/recommended"
-
-      // optionally add or override rules
-      // "prettier/prettier": "warn" // for example
+      ...js.configs.recommended.rules,
+      ...prettierPlugin.configs.recommended.rules,
+      ...mochaPlugin.configs.recommended.rules,
     },
   },
 ];
