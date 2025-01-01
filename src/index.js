@@ -13,4 +13,4 @@ if (process.env.NODE_ENV === 'development') {
   import('./dev-tools.js');
 }
 
-new AppView().prependToDom(document.querySelector('body'));
+new AppView().appendToDom(document.querySelector('body'));
