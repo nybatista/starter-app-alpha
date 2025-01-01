@@ -3,13 +3,14 @@
   "version": "0.5.0",
   "description": "Bare bones spyne application.",
   "main": "src/index.js",
+  "type" : "module",
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack --mode production --env build",
     "build:apache": "buildType=apache webpack --mode production --env build",
     "installLinks": "npm link spyne spyne-plugin-console",
     "test": "web-test-runner --config web-test-runner.config.js",
-    "lint": "eslint 'src/**/*.{js}'",
+    "lint": "eslint --config eslint.config.js",
     "format": "prettier --write 'src/**/*.{js,css,scss,html}'"
   },
   "dependencies": {

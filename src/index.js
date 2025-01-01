@@ -12,7 +12,7 @@ SpyneApp.init(config);
 
 if (process.env.NODE_ENV === 'development') {
   SpyneApp.registerPlugin(
-    new SpynePluginConsole({ position: ['bottom', 'right'], minimize: true }),
+    new SpynePluginConsole({ position: ['bottom', 'right'], minimize: false }),
   );
 }
 

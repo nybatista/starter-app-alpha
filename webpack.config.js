@@ -64,7 +64,7 @@ export default (env = { mode: "development" }) => {
         directory: 'src', // Serve static files from ./src in dev
       },
       historyApiFallback: true,
-      port
+      port: 'auto',
     },
 
     // Load plugins
