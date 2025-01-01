@@ -10,14 +10,7 @@ const config = {
 SpyneApp.init(config);
 
 if (process.env.NODE_ENV === 'development') {
-  import('spyne-plugin-console').then(({ SpynePluginConsole }) => {
-    SpyneApp.registerPlugin(
-      new SpynePluginConsole({
-        position: ['bottom', 'right'],
-        minimize: false,
-      }),
-    );
-  });
+  import('./dev-tools.js');
 }
 
 new AppView().prependToDom(document.querySelector('body'));
