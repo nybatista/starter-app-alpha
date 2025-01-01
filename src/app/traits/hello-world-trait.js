@@ -7,13 +7,7 @@ export class HelloWorldTrait extends SpyneTrait {
     super(context, traitPrefix);
   }
 
-  static helloWorld$Greet(e, byPass = false) {
-    const targetId = e?.event?.target?.id;
-
-    if (targetId !== 'hw-vbl' && byPass === false) {
-      // return;
-    }
-
+  static helloWorld$Greet() {
     // Initialize the greetings array once, storing it in props
     if (!this.props.greetings) {
       this.props.greetings = [
@@ -33,10 +27,10 @@ export class HelloWorldTrait extends SpyneTrait {
 
     // Remove the first item
     const currentGreeting = this.props.greetings.shift();
-    // Update the UI
-    //this.props.el$("h2").innerText = currentGreeting;
 
+    // Update the UI
     this.props.el$('h2').el.innerText = currentGreeting;
+
     // Re-insert the item at the end to cycle
     this.props.greetings.push(currentGreeting);
 
