@@ -1,4 +1,5 @@
 import { ViewStream } from 'spyne';
+import { HelloWorldView } from 'components/hello-world-view.js';
 
 export class AppView extends ViewStream {
   constructor(props = {}) {
@@ -21,6 +22,6 @@ export class AppView extends ViewStream {
   }
 
   onRendered() {
-    this.addBasicHelloWorld();
+    this.appendView(new HelloWorldView(), '#examples');
   }
 }
