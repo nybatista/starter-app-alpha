@@ -4,8 +4,7 @@ import HelloWorldTmpl from './hello-world.tmpl.html';
 export class AppView extends ViewStream {
   constructor(props = {}) {
     props.tagName = 'main';
-    props.id = 'app-main';
-    props.class = 'main';
+    props.id = 'app'
     super(props);
   }
 
@@ -19,6 +18,7 @@ export class AppView extends ViewStream {
 
   addHelloWorld() {
     const helloWorldView = new ViewStream({
+      id: "hello-world",
       data: {
         msg: 'Hello World',
         img: 'imgs/noun-robot.png',
