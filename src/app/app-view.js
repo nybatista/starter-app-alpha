@@ -6,6 +6,7 @@ export class AppView extends ViewStream {
   constructor(props = {}) {
     props.tagName = 'main';
     props.id = 'app';
+    props.data = PageTraits.pageTraits$GetPageData();
     props.template = StaticTmplHTML;
     props.traits = [PageTraits];
     props.channels = ['CHANNEL_ROUTE'];
@@ -18,13 +19,5 @@ export class AppView extends ViewStream {
 
   broadcastEvents() {
     return [['nav a', 'click']];
-  }
-
-  addBasicHelloWorld() {
-    this.appendView(new ViewStream({ data: 'Hello World' }), '#examples');
-  }
-
-  onRendered() {
-    // this.appendView(new HelloWorldView(), '#examples');
   }
 }

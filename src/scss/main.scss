@@ -1,35 +1,6 @@
 @use '01-vendors/normalize.css';
 @use '02-variables/mixins.scss';
 
-/*
-body {
-  margin: 0; // Remove default body margin
-  min-height: 100vh; // Ensures the background color covers full height
-  font-family: sans-serif; // Or your preferred font stack
-  background: #cbd2d9; // Subtle gray
-  color: #333; // Dark text for contrast
-}
-
-main#app {
-  max-width: 960px; // Constrain content width on larger screens
-  margin: 0 auto; // Center the main content
-  padding: 1rem; // Basic padding around content
-  box-sizing: border-box; // Helps keep consistent sizing
-}
-
-#examples {
-  padding: 1.5rem;
-  background: whitesmoke; // White background for contrast
-  border-radius: 6px; // Subtle rounded corners
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Simple shadow for some depth
-  margin-bottom: 1.5rem; // Space below the Hello World section
-  h2,
-  p {
-    margin: 1rem 0;
-  }
-}
-*/
-
 /* Variables */
 :root {
   --header-height: 60px;
@@ -38,7 +9,7 @@ main#app {
   /* Dark color palette */
   --bg-color: #1d1f21;
   --fg-color: #eee;
-  --accent-color: #4287f5;
+  --accent-color: deepskyblue;
 
   /* Header / Footer coloring */
   --header-color: #2c2f33;
@@ -96,8 +67,9 @@ body {
       text-decoration: none;
       color: var(--fg-color);
       margin-left: 1rem;
+      text-transform: capitalize;
 
-      &:hover {
+      &:hover, &.selected {
         color: var(--accent-color);
       }
     }

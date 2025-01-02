@@ -1,27 +1,39 @@
 import { SpyneTrait } from 'spyne';
-import { PageView} from 'components/page-view.js';
+import { PageView } from 'components/page-view.js';
 
 export class PageTraits extends SpyneTrait {
   constructor(context) {
     let traitPrefix = 'pageTraits$';
-
     super(context, traitPrefix);
   }
 
-  static pageTraits$HelloWorld() {
-    return 'Hello World';
-  }
-
   static pageTraits$onRouteEvent(e) {
+    // 'change' is the default root Route Property
     const { change } = e.payload.routeData;
-    const data = this.pageTraits$GetPageData(change);
-    this.appendView(new PageView({data}), ".stage-view");
 
-    console.log('CHANGE IS ', { change, data });
+    // locate the active nav anchor and add the .selected class
+    this.props.el$('nav a').setActiveItem('selected', `.link-${change}`);
+
+    // get current page data and load into new PageView
+    const data = this.pageTraits$GetDataByPageId(change);
+    this.appendView(new PageView({ data }), '.stage-view');
   }
 
-  static pageTraits$GetPageData(pageId = 'home') {
-    const pageDataArr = [
+  static pageTraits$GetDataByPageId(pageId = 'home') {
+    const notFoundPage = {
+      pageId: '404',
+      title: 'Page Not Found',
+      text: 'Oops! The requested page does not exist.',
+    };
+
+    // Use Array.prototype.find to locate page data or return 404 data
+    return (
+      this.props.data.find((page) => page.pageId === pageId) || notFoundPage
+    );
+  }
+
+  static pageTraits$GetPageData() {
+    return [
       {
         pageId: 'home',
         title: 'Home',
@@ -43,14 +55,5 @@ export class PageTraits extends SpyneTrait {
         text: 'Got questions or feedback? Reach out via our contact page or follow us on social media.',
       },
     ];
-
-    const notFoundPage = {
-      pageId: '404',
-      title: 'Page Not Found',
-      text: 'Oops! The requested page does not exist.',
-    };
-
-    // Use .find() to locate the matching page; default to the 404 object if not found.
-    return pageDataArr.find((page) => page.pageId === pageId) || notFoundPage;
   }
 }
