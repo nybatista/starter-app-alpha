@@ -1,4 +1,4 @@
-import { DomElement, SpyneTrait } from 'spyne';
+import { SpyneTrait } from 'spyne';
 import { MemeElement } from 'components/meme-element.js';
 
 export class MemeGeneratorTraits extends SpyneTrait {

@@ -13,10 +13,9 @@ SpyneApp.registerChannel(new ChannelMemeGenerator());
 const imgUrl = 'https://dog.ceo/api/breeds/image/random';
 const txtUrl = '//api.quotable.io/random';
 
-
 SpyneApp.registerChannel(
   new ChannelFetch('CHANNEL_MEME_IMG', {
-    url: imgUrl
+    url: imgUrl,
   }),
 );
 
@@ -25,7 +24,6 @@ SpyneApp.registerChannel(
     url: txtUrl,
   }),
 );
-
 
 if (process.env.NODE_ENV === 'development') {
   import('./dev-tools.js');
