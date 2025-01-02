@@ -12,7 +12,7 @@ export class AppView extends ViewStream {
 
   addActionListeners() {
     return [
-      ['CHANNEL_MEME_GENERATOR_UPDATE_EVENT', 'memeGenerator$CreateMeme'],
+      ['CHANNEL_MEME_GENERATOR_UPDATE_EVENT', 'memeGenerator$CreateMemeFromTxtAndImg'],
     ];
   }
 

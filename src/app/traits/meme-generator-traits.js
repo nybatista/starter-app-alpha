@@ -7,8 +7,13 @@ export class MemeGeneratorTraits extends SpyneTrait {
     super(context, traitPrefix);
   }
 
-  static memeGenerator$OnDataReturned(e) {
-    console.log('E IS ', e);
+  static memeGenerator$GetTxtAndImg() {
+    this.mergeChannels(['CHANNEL_MEME_IMG', 'CHANNEL_MEME_TXT']).subscribe(
+      this.memeGenerator$OnTxtAndImgReturned.bind(this),
+    );
+  }
+
+  static memeGenerator$OnTxtAndImgReturned(e) {
     const { message, title = 'random doggo' } = e['CHANNEL_MEME_IMG'].payload;
     const { content, author } = e['CHANNEL_MEME_TXT'].payload;
     this.sendChannelPayload('CHANNEL_MEME_GENERATOR_UPDATE_EVENT', {
@@ -19,27 +24,15 @@ export class MemeGeneratorTraits extends SpyneTrait {
     });
   }
 
-  static memeGenerator$GetFetchChannels() {
-    this.mergeChannels(['CHANNEL_MEME_IMG', 'CHANNEL_MEME_TXT']).subscribe(
-      this.memeGenerator$OnDataReturned.bind(this),
-    );
-  }
-
-  static memeGenerator$CreateMeme(e) {
+  static memeGenerator$CreateMemeFromTxtAndImg(e) {
     const data = e.payload;
-
-    console.log('DATA IS ', data);
-    const mashupHTML = new MemeElement({ data });
-    this.props.el.appendChild(mashupHTML.render());
-  }
-
-  static memeGenerator$HelloWorld() {
-    return 'Hello World';
+    const memeHTML = new MemeElement({ data });
+    this.props.el.appendChild(memeHTML.render());
   }
 
   static memeGenerator$Test() {
     const payload = this.memeGenerator$TestData();
-    this.memeGenerator$CreateMeme({ payload });
+    this.memeGenerator$CreateMemeFromTxtAndImg({ payload });
   }
 
   static memeGenerator$TestData() {

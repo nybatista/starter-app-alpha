@@ -10,7 +10,7 @@ export class ChannelMemeGenerator extends Channel {
   }
 
   onRegistered() {
-    this.memeGenerator$GetFetchChannels();
+    this.memeGenerator$GetTxtAndImg();
   }
 
   addRegisteredActions() {
