@@ -9,7 +9,7 @@ export class PageTraits extends SpyneTrait {
 
   static pageTraits$onRouteEvent(e) {
     // 'change' is the default root Route Property
-    const { change } = e.payload.routeData;
+    const { change = 'home' } = e.payload.routeData;
 
     // locate the active nav anchor and add the .selected class
     this.props.el$('nav a').setActiveItem('selected', `.link-${change}`);
