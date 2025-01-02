@@ -1,23 +1,26 @@
 import { ViewStream } from 'spyne';
-import { PageTraits } from 'traits/page-traits.js';
-import StaticTmplHTML from 'components/templates/static-example.tmpl.html';
+import { MemeGeneratorTraits } from 'traits/meme-generator-traits.js';
 
 export class AppView extends ViewStream {
   constructor(props = {}) {
     props.tagName = 'main';
-    props.id = 'app';
-    props.data = PageTraits.pageTraits$GetPageData();
-    props.template = StaticTmplHTML;
-    props.traits = [PageTraits];
-    props.channels = ['CHANNEL_ROUTE'];
+    props.id = 'meme';
+    props.traits = [MemeGeneratorTraits];
+    props.channels = ['CHANNEL_MEME_GENERATOR'];
     super(props);
   }
 
   addActionListeners() {
-    return [['CHANNEL_ROUTE_.*_EVENT', 'pageTraits$onRouteEvent']];
+    return [
+      ['CHANNEL_MEME_GENERATOR_UPDATE_EVENT', 'memeGenerator$CreateMeme'],
+    ];
   }
 
   broadcastEvents() {
-    return [['nav a', 'click']];
+    return [];
+  }
+
+  onRendered() {
+    //this.memeGenerator$Test();
   }
 }

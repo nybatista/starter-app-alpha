@@ -1,28 +1,29 @@
 <header class="site-header">
-    <div class="header-content">
-        <h1 class="site-title">Single Active Page &ndash; Example</h1>
-        <nav class="site-nav">
-            {{#}}
-            <a class = 'link-{{pageId}}'
-               data-channel="ROUTE"
-               data-change="{{pageId}}"
-               data-event-prevent-default="true"
-               href="/{{pageId}}">
-              {{pageId}}
-            </a>
-            {{/}}
-
-        </nav>
-    </div>
+  <div class="header-content">
+    <h1 class="site-title">Single Active Page &ndash; Example</h1>
+    <nav class="site-nav">
+      {{#}}
+      <a
+        class="link-{{pageId}}"
+        data-channel="ROUTE"
+        data-change="{{pageId}}"
+        data-event-prevent-default="true"
+        href="/{{pageId}}"
+      >
+        {{pageId}}
+      </a>
+      {{/}}
+    </nav>
+  </div>
 </header>
 
 <main class="stage-view">
-    <!--   PAGES ARE LOADED HERE -->
+  <!--   PAGES ARE LOADED HERE -->
 </main>
 
 <footer class="site-footer">
-    <div class="footer-content">
-        <p>&copy; 2025 Your Company Name</p>
-        <!-- Example extra links or disclaimers -->
-    </div>
+  <div class="footer-content">
+    <p>&copy; 2025 Your Company Name</p>
+    <!-- Example extra links or disclaimers -->
+  </div>
 </footer>

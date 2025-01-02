@@ -48,7 +48,7 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.83.0",
     "sass-loader": "^16.0.4",
-    "spyne-cli": "^0.6.0",
+    "spyne-cli": "^0.6.2",
     "spyne-plugin-console": "^0.5.1",
     "style-loader": "^4.0.0",
     "webpack": "^5.97.1",

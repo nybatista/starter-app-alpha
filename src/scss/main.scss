@@ -1,6 +1,6 @@
 @use '01-vendors/normalize.css';
 @use '02-variables/mixins.scss';
-
+@use '03-components/meme-generator.scss';
 /* Variables */
 :root {
   --header-height: 60px;
@@ -69,7 +69,8 @@ body {
       margin-left: 1rem;
       text-transform: capitalize;
 
-      &:hover, &.selected {
+      &:hover,
+      &.selected {
         color: var(--accent-color);
       }
     }
