@@ -1,6 +1,7 @@
 @use '01-vendors/normalize.css';
 @use '02-variables/mixins.scss';
 
+/*
 body {
   margin: 0; // Remove default body margin
   min-height: 100vh; // Ensures the background color covers full height
@@ -25,5 +26,120 @@ main#app {
   h2,
   p {
     margin: 1rem 0;
+  }
+}
+*/
+
+/* Variables */
+:root {
+  --header-height: 60px;
+  --footer-height: 50px;
+
+  /* Dark color palette */
+  --bg-color: #1d1f21;
+  --fg-color: #eee;
+  --accent-color: #4287f5;
+
+  /* Header / Footer coloring */
+  --header-color: #2c2f33;
+  --footer-color: #2c2f33;
+  --border-color: #3a3d42;
+
+  /* Max Content Width */
+  --max-content-width: 960px;
+}
+
+/* Global Resets/Bases */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+/* Site Header */
+.site-header {
+  height: var(--header-height);
+  background-color: var(--header-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+
+  .header-content {
+    width: 100%;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--fg-color);
+  }
+
+  .site-nav {
+    a {
+      text-decoration: none;
+      color: var(--fg-color);
+      margin-left: 1rem;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+
+/*
+   The main stage area
+   min-height = 100vh - header - footer
+*/
+.stage-view {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  background-color: var(--bg-color);
+
+  /* page-view container wraps the .page-content */
+  .page-view {
+    width: 100%;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 1rem;
+
+    .page-content {
+      /* additional styling if needed */
+    }
+  }
+}
+
+/* Site Footer */
+.site-footer {
+  height: var(--footer-height);
+  background-color: var(--footer-color);
+  border-top: 1px solid var(--border-color);
+
+  .footer-content {
+    width: 100%;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    color: var(--fg-color);
   }
 }

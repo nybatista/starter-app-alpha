@@ -1,20 +1,23 @@
 import { ViewStream } from 'spyne';
-import { HelloWorldView } from 'components/hello-world-view.js';
+import { PageTraits } from 'traits/page-traits.js';
+import StaticTmplHTML from 'components/templates/static-example.tmpl.html';
 
 export class AppView extends ViewStream {
   constructor(props = {}) {
     props.tagName = 'main';
     props.id = 'app';
-    props.template = `<div id='examples'></div>`;
+    props.template = StaticTmplHTML;
+    props.traits = [PageTraits];
+    props.channels = ['CHANNEL_ROUTE'];
     super(props);
   }
 
   addActionListeners() {
-    return [];
+    return [['CHANNEL_ROUTE_.*_EVENT', 'pageTraits$onRouteEvent']];
   }
 
   broadcastEvents() {
-    return [];
+    return [['nav a', 'click']];
   }
 
   addBasicHelloWorld() {
@@ -22,6 +25,6 @@ export class AppView extends ViewStream {
   }
 
   onRendered() {
-    this.appendView(new HelloWorldView(), '#examples');
+    // this.appendView(new HelloWorldView(), '#examples');
   }
 }
