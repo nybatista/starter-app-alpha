@@ -17,10 +17,6 @@ export class AppView extends ViewStream {
     return [];
   }
 
-  addBasicHelloWorld() {
-    this.appendView(new ViewStream({ data: 'Hello World' }), '#examples');
-  }
-
   onRendered() {
     this.appendView(new HelloWorldView(), '#examples');
   }
