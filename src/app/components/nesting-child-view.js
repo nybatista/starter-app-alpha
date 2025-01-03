@@ -7,7 +7,14 @@ export class NestingChildView extends ViewStream {
     props.traits = [NestingTraits];
     props.data ??= { childType: 'universe' };
     props.addRandom ??= false;
-    props.childTypeArr ??= ['galaxy', 'solar-system', 'planet', 'moon', 'asteroid'];
+    props.childTypeArr ??= [
+      'galaxy',
+      'solar-system',
+      'planet',
+      'moon',
+      'asteroid',
+      'alien'
+    ];
     props.class = `branch ${props.data.childType}`;
     props.template = NestingChildTmpl;
     super(props);

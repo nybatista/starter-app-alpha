@@ -49,7 +49,7 @@ export class NestingTraits extends SpyneTrait {
     const ranWeightHash = {
       universe: [2, 2],
       galaxy: [1, 1, 2, 2, 2, 3],
-      "solar-system": [0, 1, 2, 2],
+      'solar-system': [0, 1, 2, 2],
       planet: [1, 1, 1, 0],
       ggc1: [1, 0, 0, 0],
       moon: [1, 0, 0, 0],
@@ -62,7 +62,6 @@ export class NestingTraits extends SpyneTrait {
     // Select a random index based on the weights
     const index = Math.floor(Math.random() * weights.length);
 
-    //console.log("CHILD TYPE ",{childType, weights, index}, this.props)
     // Retrieve the number of times to run from the weights array
     return weights[index];
   }

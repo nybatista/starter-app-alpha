@@ -36,6 +36,17 @@
     background-color: palette.$Neutral-050;
   }
 
+  .alien{
+    .controls{
+      .btn:first-child{
+        width: 100%;
+      }
+      .btn:last-child{
+        display: none;
+      }
+    }
+  }
+
   /* Shared styling for each nested container (was .branch) */
   .celestial-body, .branch {
     display: flex;

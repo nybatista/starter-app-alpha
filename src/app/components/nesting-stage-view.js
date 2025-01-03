@@ -6,7 +6,13 @@ export class NestingStage extends ViewStream {
     props.id = 'nesting-example';
     props.vsid = 'reset';
     props.traits = [NestingTraits];
-    props.childTypeArr = ['galaxy', 'solar-system', 'planet', 'moon', 'asteroid'];
+    props.childTypeArr = [
+      'galaxy',
+      'solar-system',
+      'planet',
+      'moon',
+      'asteroid',
+    ];
     props.addRandom = true;
     props.template = `
          <button class="btn material-symbols-outlined reset" data-reset="true" data-add-random="false" data-child-type="reset"  data-event-type="reset">restart_alt</button>`;
@@ -14,7 +20,9 @@ export class NestingStage extends ViewStream {
   }
 
   addActionListeners() {
-    return [['CHANNEL_UI_CLICK_EVENT', 'codePlayground$AdduniverseNode', '.reset']];
+    return [
+      ['CHANNEL_UI_CLICK_EVENT', 'codePlayground$AdduniverseNode', '.reset'],
+    ];
   }
 
   broadcastEvents() {

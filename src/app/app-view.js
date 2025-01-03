@@ -22,8 +22,7 @@ export class AppView extends ViewStream {
    * we call 'memeGenerator$CreateMemeFromTxtAndImg' to build and insert the meme.
    */
   addActionListeners() {
-    return [
-    ];
+    return [];
   }
 
   /**
@@ -41,7 +40,7 @@ export class AppView extends ViewStream {
    *
    */
   onRendered() {
-   // this.memeGenerator$Test();
+    // this.memeGenerator$Test();
     this.appendView(new NestingStage());
   }
 }
