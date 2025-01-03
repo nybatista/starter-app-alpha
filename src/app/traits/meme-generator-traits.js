@@ -62,7 +62,7 @@ export class MemeGeneratorTraits extends SpyneTrait {
 
   /**
    * Uses the data from the event payload to create a MemeElement and append it
-   * to the DOM (this.props.el is the root element for the ViewStream instance
+   * to the DOM (this.props.el is the universe element for the ViewStream instance
    * that imported these methods, and uses appendChild to load the MemeElement content).
    *
    * @param {Object} e - Contains { payload: {...} } with { message, title, content, author }.
@@ -70,7 +70,7 @@ export class MemeGeneratorTraits extends SpyneTrait {
   static memeGenerator$CreateMemeFromTxtAndImg(e) {
     const data = e.payload;
     const memeHTML = new MemeElement({ data });
-    // props.el is the root element for the ViewStream instance that imported these Trait methods,
+    // props.el is the universe element for the ViewStream instance that imported these Trait methods,
     // so we can append our MemeElement directly to it.
     this.props.el.appendChild(memeHTML.render());
   }

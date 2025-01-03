@@ -6,7 +6,7 @@ import MemeTmpl from './templates/meme.tmpl.html';
  */
 export class MemeElement extends DomElement {
   constructor(props = {}) {
-    // Configure the root <figure class="meme">...
+    // Configure the universe <figure class="meme">...
     props.tagName = 'figure';
     props.class = 'meme';
     // Assign the imported HTML template

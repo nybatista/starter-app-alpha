@@ -11,7 +11,7 @@ export class NestingTraits extends SpyneTrait {
     const { eventType } = e.payload;
 
     if (eventType === 'reset') {
-      if (this.props.data.childType === 'root') {
+      if (this.props.data.childType === 'universe') {
         this.disposeViewStream();
       }
     } else {
@@ -35,7 +35,7 @@ export class NestingTraits extends SpyneTrait {
       '.children',
     );
   }
-  static codePlayground$AddRootNode(props = this.props) {
+  static codePlayground$AdduniverseNode(props = this.props) {
     this.appendView(
       new NestingChildView({
         addRandom: true,
@@ -47,7 +47,7 @@ export class NestingTraits extends SpyneTrait {
     childType = this.props.data.childType,
   ) {
     const ranWeightHash = {
-      root: [2, 2],
+      universe: [2, 2],
       child: [1, 1, 2, 2, 2, 3],
       grandchild: [0, 1, 2, 2],
       ggc: [1, 1, 1, 0],

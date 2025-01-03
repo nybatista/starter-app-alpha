@@ -14,7 +14,7 @@ export class NestingStage extends ViewStream {
   }
 
   addActionListeners() {
-    return [['CHANNEL_UI_CLICK_EVENT', 'codePlayground$AddRootNode', '.reset']];
+    return [['CHANNEL_UI_CLICK_EVENT', 'codePlayground$AdduniverseNode', '.reset']];
   }
 
   broadcastEvents() {
@@ -22,7 +22,7 @@ export class NestingStage extends ViewStream {
   }
 
   onRendered() {
-    this.codePlayground$AddRootNode();
+    this.codePlayground$AdduniverseNode();
     this.addChannel('CHANNEL_UI');
   }
 }

@@ -5,7 +5,7 @@ import NestingChildTmpl from './templates/nesting-child.tmpl.html';
 export class NestingChildView extends ViewStream {
   constructor(props = {}) {
     props.traits = [NestingTraits];
-    props.data ??= { childType: 'root' };
+    props.data ??= { childType: 'universe' };
     props.addRandom ??= false;
     props.childTypeArr ??= ['child', 'grandchild', 'ggc', 'ggc2', 'ggc3'];
     props.class = `branch ${props.data.childType}`;

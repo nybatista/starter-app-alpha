@@ -2,7 +2,7 @@ import { ViewStream } from 'spyne';
 import { NestingStage } from 'components/nesting-stage-view.js';
 
 /**
- * This class defines the root DOM element
+ * This class defines the universe DOM element
  * (in this case a <main> with id="meme"),
  * loads MemeGeneratorTraits and
  * listens for meme-related updates.
