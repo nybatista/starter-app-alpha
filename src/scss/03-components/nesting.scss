@@ -1,3 +1,4 @@
+@use "sass:color";
 @use '../02-variables/palette.scss' as palette;
 
 /* The outer container for the entire example */
@@ -16,25 +17,21 @@
     }
   }
 
-  /* (2) Galaxy level (previously child) */
+  .universe {
+    background-color: palette.$Neutral-400;
+    border: 2px solid palette.$Primary-700;
+  }
   .galaxy {
     background-color: palette.$Neutral-300;
-    & > p{
-      color: palette.$Neutral-100;
-    }
+    border: 1px solid palette.$Primary-700;
   }
-
-  /* (3) Solar system (previously grandchild) */
   .solar-system {
     background-color: palette.$Neutral-200;
+    border: 1px dashed palette.$Primary-700;
   }
-
-  /* (4) Planet (previously ggc) */
   .planet {
     background-color: palette.$Neutral-100;
   }
-
-  /* (5) Moon (previously ggc2) */
   .moon {
     background-color: palette.$Neutral-050;
   }
@@ -63,9 +60,10 @@
       width: 100%;
       height: 30px;
       margin-bottom: 0.25rem;
+
       .btn {
-        color: #eee;
-        background: darkblue;
+        color: palette.$Neutral-050;
+        background:  palette.$Primary-700;;
         width: 50%;
         border: none;
         cursor: pointer;
