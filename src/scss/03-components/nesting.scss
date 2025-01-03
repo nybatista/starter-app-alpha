@@ -68,7 +68,7 @@
         border: none;
         cursor: pointer;
         &:hover {
-          background: navy;
+          background: color.adjust(palette.$Primary-700, $lightness: -10%);
         }
       }
     }
