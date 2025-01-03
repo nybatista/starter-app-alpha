@@ -13,7 +13,7 @@ export class NestingChildView extends ViewStream {
       'planet',
       'moon',
       'asteroid',
-      'alien'
+      'alien',
     ];
     props.class = `branch ${props.data.childType}`;
     props.template = NestingChildTmpl;
