@@ -1,35 +1,59 @@
 @use '../02-variables/palette.scss' as palette;
 
+/* The outer container for the entire example */
 #nesting-example {
-  p{
+  p {
     color: #666;
+    font-weight: bold;
   }
 
+
+  /* (1) Universe level (previously root) */
   .universe {
-    background-color: palette.$Supporting-4-400;
+    background-color: palette.$Neutral-400;
+    & > p{
+      color: palette.$Neutral-075;
+    }
   }
-  .child, .galaxy {
-    background-color: palette.$Supporting-4-300;
+
+  /* (2) Galaxy level (previously child) */
+  .galaxy {
+    background-color: palette.$Neutral-300;
+    & > p{
+      color: palette.$Neutral-100;
+    }
   }
+
+  /* (3) Solar system (previously grandchild) */
   .solar-system {
-    background-color: palette.$Supporting-4-200;
+    background-color: palette.$Neutral-200;
   }
+
+  /* (4) Planet (previously ggc) */
   .planet {
-    background-color: palette.$Supporting-4-100;
+    background-color: palette.$Neutral-100;
   }
-  .ggc2 {
-    background-color: palette.$Supporting-4-050;
+
+  /* (5) Moon (previously ggc2) */
+  .moon {
+    background-color: palette.$Neutral-050;
   }
-  .ggc3 {
-    background-color: palette.$Supporting-4-050;
-  }
-  .branch {
+
+  /* Shared styling for each nested container (was .branch) */
+  .celestial-body, .branch {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1rem;
     padding: 0.5rem 0 0 0;
-    border: 1px solid #999;
+    border: 2px solid #999; /* slightly thicker to highlight each boundary */
+
+    /* Add a small label to identify each level, if you like: */
+    .label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
     .children {
       display: flex;
     }
@@ -37,11 +61,17 @@
       position: relative;
       display: flex;
       width: 100%;
-      height: 26px;
+      height: 30px;
+      margin-bottom: 0.25rem;
       .btn {
-        color: #aaa;
+        color: #eee;
         background: darkblue;
         width: 50%;
+        border: none;
+        cursor: pointer;
+        &:hover {
+          background: navy;
+        }
       }
     }
   }

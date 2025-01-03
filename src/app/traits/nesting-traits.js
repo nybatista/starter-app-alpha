@@ -52,7 +52,7 @@ export class NestingTraits extends SpyneTrait {
       "solar-system": [0, 1, 2, 2],
       planet: [1, 1, 1, 0],
       ggc1: [1, 0, 0, 0],
-      ggc2: [1, 0, 0, 0],
+      moon: [1, 0, 0, 0],
     };
 
     const defaultWeight = [1, 0];
