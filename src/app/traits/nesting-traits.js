@@ -60,7 +60,7 @@ export class NestingTraits extends SpyneTrait {
    * Creates a new top-level "universe" node with random additions (if needed).
    * Typically invoked to start the nesting chain.
    */
-  static nestPlayground$AdduniverseNode(props = this.props) {
+  static nestPlayground$AddUniverseNode() {
     this.appendView(
       new NestingChildView({
         addRandom: true,
@@ -72,7 +72,7 @@ export class NestingTraits extends SpyneTrait {
    * Weighted random logic to decide how many times to add another child.
    * e.g., if childType= "galaxy", we might add 2 or 3 children more frequently.
    */
-  static nestPlayground$GetRandomAddBool(
+  static nestPlayground$GetRandomAddCount(
     childType = this.props.data.childType,
   ) {
     const ranWeightHash = {
@@ -95,7 +95,7 @@ export class NestingTraits extends SpyneTrait {
   }
 
   /**
-   * If addRandom is true, pick a random number (timesToRun) from nestPlayground$GetRandomAddBool
+   * If addRandom is true, pick a random number (timesToRun) from nestPlayground$GetRandomAddCount
    * and repeatedly call nestPlayground$AddChild.
    * This can lead to quickly building deep or wide nested structures.
    */
@@ -104,7 +104,7 @@ export class NestingTraits extends SpyneTrait {
     if (!addRandom) return;
 
     if (props.addRandom === true && this.props.childTypeArr.length > 0) {
-      const timesToRun = this.nestPlayground$GetRandomAddBool();
+      const timesToRun = this.nestPlayground$GetRandomAddCount();
       for (let i = 0; i < timesToRun; i++) {
         this.nestPlayground$AddChild();
       }

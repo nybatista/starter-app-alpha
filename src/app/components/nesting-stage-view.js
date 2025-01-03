@@ -12,25 +12,44 @@ export class NestingStage extends ViewStream {
       'planet',
       'moon',
       'asteroid',
+      'alien',
     ];
     props.addRandom = true;
+
+    // A small heading for context, plus the reset button
     props.template = `
-         <button class="btn material-symbols-outlined reset" data-reset="true" data-add-random="false" data-child-type="reset"  data-event-type="reset">restart_alt</button>`;
+<div class="title-bar">
+  <h2>ViewStream Nesting Example</h2>
+  <button class="btn reset" data-reset="true" data-add-random="false" 
+          data-child-type="reset" data-event-type="reset">
+    <span class="material-symbols-outlined">refresh</span>
+  </button>
+</div>
+`;
+
     super(props);
   }
 
   addActionListeners() {
     return [
-      ['CHANNEL_UI_CLICK_EVENT', 'nestPlayground$AdduniverseNode', '.reset'],
+      // When user clicks the .reset button, call nestPlayground$AddUniverseNode
+      // (thus triggering a reset).
+      ['CHANNEL_UI_CLICK_EVENT', 'nestPlayground$AddUniverseNode', '.reset'],
     ];
   }
 
   broadcastEvents() {
+    // Broadcasting the click on .reset to CHANNEL_UI so we can respond in addActionListeners.
     return [['.reset', 'click']];
   }
 
+  /**
+   * onRendered runs after the DOM element (#nesting-example) has been attached.
+   * We immediately add a top-level “universe” node, along with random children,
+   * to kick off the nesting demo.
+   */
   onRendered() {
-    this.nestPlayground$AdduniverseNode();
+    this.nestPlayground$AddUniverseNode();
     this.addChannel('CHANNEL_UI');
   }
 }
