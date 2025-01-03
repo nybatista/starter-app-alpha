@@ -1,5 +1,5 @@
 import { ViewStream } from 'spyne';
-import { MemeGeneratorTraits } from 'traits/meme-generator-traits.js';
+import { NestingStage } from 'components/nesting-stage-view.js';
 
 /**
  * This class defines the root DOM element
@@ -11,8 +11,8 @@ export class AppView extends ViewStream {
   constructor(props = {}) {
     props.tagName = 'main';
     props.id = 'meme';
-    props.traits = [MemeGeneratorTraits]; // Import the MemeGenerator trait methods
-    props.channels = ['CHANNEL_MEME_GENERATOR']; // Listen for meme generator events
+    props.traits = []; // Import the MemeGenerator trait methods
+    props.channels = []; // Listen for meme generator events
     super(props);
   }
 
@@ -23,10 +23,6 @@ export class AppView extends ViewStream {
    */
   addActionListeners() {
     return [
-      [
-        'CHANNEL_MEME_GENERATOR_UPDATE_EVENT',
-        'memeGenerator$CreateMemeFromTxtAndImg',
-      ],
     ];
   }
 
@@ -45,6 +41,7 @@ export class AppView extends ViewStream {
    *
    */
   onRendered() {
-    // this.memeGenerator$Test();
+   // this.memeGenerator$Test();
+    this.appendView(new NestingStage());
   }
 }

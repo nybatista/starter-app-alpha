@@ -1,0 +1,48 @@
+@use '../02-variables/palette.scss' as palette;
+
+#nesting-example {
+  p{
+    color: #666;
+  }
+
+  .root {
+    background-color: palette.$Supporting-4-400;
+  }
+  .child {
+    background-color: palette.$Supporting-4-300;
+  }
+  .grandchild {
+    background-color: palette.$Supporting-4-200;
+  }
+  .ggc {
+    background-color: palette.$Supporting-4-100;
+  }
+  .ggc2 {
+    background-color: palette.$Supporting-4-050;
+  }
+  .ggc3 {
+    background-color: palette.$Supporting-4-050;
+  }
+  .branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 0.5rem 0 0 0;
+    border: 1px solid #999;
+    .children {
+      display: flex;
+    }
+    .controls {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 26px;
+      .btn {
+        color: #aaa;
+        background: darkblue;
+        width: 50%;
+      }
+    }
+  }
+}
