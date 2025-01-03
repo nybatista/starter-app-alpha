@@ -3,10 +3,10 @@ import { NestingChildView } from 'components/nesting-child-view.js';
 
 export class NestingTraits extends SpyneTrait {
   constructor(context) {
-    let traitPrefix = 'codePlayground$';
+    let traitPrefix = 'nestPlayground$';
     super(context, traitPrefix);
   }
-  static codePlayground$OnNestingEvent(e, props = this.props) {
+  static nestPlayground$OnNestingEvent(e, props = this.props) {
     props.addRandom = false;
     const { eventType } = e.payload;
 
@@ -16,12 +16,12 @@ export class NestingTraits extends SpyneTrait {
       }
     } else {
       return e.payload.eventType === 'add'
-        ? this.codePlayground$AddChild()
+        ? this.nestPlayground$AddChild()
         : this.disposeViewStream();
     }
   }
 
-  static codePlayground$AddChild(props = this.props) {
+  static nestPlayground$AddChild(props = this.props) {
     const { addRandom } = props;
     const childTypeArr = props.childTypeArr.slice();
 
@@ -35,7 +35,7 @@ export class NestingTraits extends SpyneTrait {
       '.children',
     );
   }
-  static codePlayground$AdduniverseNode(props = this.props) {
+  static nestPlayground$AdduniverseNode(props = this.props) {
     this.appendView(
       new NestingChildView({
         addRandom: true,
@@ -43,7 +43,7 @@ export class NestingTraits extends SpyneTrait {
     );
   }
 
-  static codePlayground$GetRandomAddBool(
+  static nestPlayground$GetRandomAddBool(
     childType = this.props.data.childType,
   ) {
     const ranWeightHash = {
@@ -66,14 +66,14 @@ export class NestingTraits extends SpyneTrait {
     return weights[index];
   }
 
-  static codePlayground$RandomAddChildCheck(props = this.props) {
+  static nestPlayground$RandomAddChildCheck(props = this.props) {
     const { addRandom } = props;
     if (addRandom) {
       if (props.addRandom === true && this.props.childTypeArr.length > 0) {
-        const timesToRun = this.codePlayground$GetRandomAddBool();
+        const timesToRun = this.nestPlayground$GetRandomAddBool();
 
         for (let i = 0; i < timesToRun; i++) {
-          this.codePlayground$AddChild();
+          this.nestPlayground$AddChild();
         }
       }
     }

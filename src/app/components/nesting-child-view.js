@@ -30,7 +30,7 @@ export class NestingChildView extends ViewStream {
     return [
       [
         'CHANNEL_UI_CLICK_EVENT',
-        'codePlayground$OnNestingEvent',
+        'nestPlayground$OnNestingEvent',
         payloadFilter,
       ],
     ];
@@ -41,6 +41,6 @@ export class NestingChildView extends ViewStream {
 
   onRendered() {
     this.addChannel('CHANNEL_UI');
-    this.codePlayground$RandomAddChildCheck();
+    this.nestPlayground$RandomAddChildCheck();
   }
 }
