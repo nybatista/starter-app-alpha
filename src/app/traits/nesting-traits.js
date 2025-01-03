@@ -48,7 +48,7 @@ export class NestingTraits extends SpyneTrait {
   ) {
     const ranWeightHash = {
       universe: [2, 2],
-      child: [1, 1, 2, 2, 2, 3],
+      galaxy: [1, 1, 2, 2, 2, 3],
       grandchild: [0, 1, 2, 2],
       ggc: [1, 1, 1, 0],
       ggc1: [1, 0, 0, 0],
