@@ -1,15 +1,31 @@
-##  Spynejs Hello World Application
- barebones app preconfigured for building, testing and adding content using the spyne-cli tool
+# SpyneJS Starter App
 
-App includes
-* AppView
-* Application Folder Structure
-* Build, production setup using webpack and sass
-* Spyne Console plugin
-* Unit testing 
+**Repository:** [spynejs-starter-app](https://github.com/nybatista/spynejs-starter-app.git)
 
-```
-npm run init or npm install
-```
+A production-ready template for building **SpyneJS** applications. This repository serves as a quick start—cloned directly or generated via [`spyne-cli`](https://www.npmjs.com/package/spyne-cli).
 
-### Build better web experiences, faster
+## Features
+
+- **Webpack Dev/Prod Environments**
+    - Hot reload with `npm start`, optimized builds with `npm run build`.
+
+- **SpyneJS “VBL” Structure**
+    - Encourages the View–Behavior–Logic pattern out of the box.
+
+- **SCSS Integration**
+    - Out-of-the-box SASS/SCSS support for styling.
+
+- **Unit Testing**
+    - Preconfigured with Web-Test-Runner using Mocha & Chai.
+
+- **Linting / Formatting**
+    - ESLint rules + recommended formatting for consistent code style.
+
+## Getting Started
+
+1. **Clone or Install**
+
+   ```bash
+   git clone https://github.com/nybatista/spynejs-starter-app.git
+   cd spynejs-starter-app
+   npm install
