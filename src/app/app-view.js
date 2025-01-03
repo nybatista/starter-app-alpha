@@ -2,45 +2,37 @@ import { ViewStream } from 'spyne';
 import { NestingStage } from 'components/nesting-stage-view.js';
 
 /**
- * This class defines the universe DOM element
- * (in this case a <main> with id="meme"),
- * loads MemeGeneratorTraits and
- * listens for meme-related updates.
+ * AppView is the main entry point for our nesting example. It:
+ *  - Defines a <main> tag as the root.
+ *  - Appends a NestingStage instance.
  */
 export class AppView extends ViewStream {
   constructor(props = {}) {
+    // Minimal configuration: tagName=main, no traits or channels needed here
     props.tagName = 'main';
-    props.id = 'meme';
-    props.traits = []; // Import the MemeGenerator trait methods
-    props.channels = []; // Listen for meme generator events
+    props.id = 'nest-app';
     super(props);
   }
 
   /**
-   * Returns an array of mappings from channel actions to local Trait methods.
-   * In this example, whenever 'CHANNEL_MEME_GENERATOR_UPDATE_EVENT' is emitted,
-   * we call 'memeGenerator$CreateMemeFromTxtAndImg' to build and insert the meme.
+   * No channel actions needed for this top-level view.
    */
   addActionListeners() {
     return [];
   }
 
   /**
-   * Optionally list DOM events you want to broadcast to channels.
-   * Currently empty, but you might add click or input events here
-   * if the user triggers meme generation via UI interactions.
+   * No DOM events broadcast here—NestingStage handles its own events.
    */
   broadcastEvents() {
     return [];
   }
 
   /**
-   * Uncomment the below test call if you want to see a test meme
-   * immediately on load, bypassing channel fetches:
-   *
+   * Once the <main id="nest-app"> element is rendered,
+   * we instantiate and append a NestingStage,
    */
   onRendered() {
-    // this.memeGenerator$Test();
     this.appendView(new NestingStage());
   }
 }
