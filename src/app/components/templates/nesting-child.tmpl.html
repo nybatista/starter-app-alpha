@@ -1,20 +1,32 @@
+<!--
+  This template is used by NestingChildView to display:
+    1) The current 'childType' (e.g., universe, galaxy).
+    2) Two buttons to remove or add another nested child of that same type.
+    3) A '.children' container where subchildren (further nested elements) are appended.
+-->
 <p>{{childType}}</p>
+
 <div class="controls">
-  <button
-    class="btn material-symbols-outlined"
-    data-add-random="false"
-    data-child-type="{{childType}}"
-    data-event-type="remove"
-  >
-    remove
-  </button>
-  <button
-    class="btn material-symbols-outlined"
-    data-add-random="false"
-    data-child-type="{{childType}}"
-    data-event-type="add"
-  >
-    add
-  </button>
+    <!-- The 'remove' button triggers a remove event for this childType -->
+    <button
+            class="btn material-symbols-outlined"
+            data-add-random="false"
+            data-child-type="{{childType}}"
+            data-event-type="remove"
+    >
+        remove
+    </button>
+
+    <!-- The 'add' button triggers an add event for this childType -->
+    <button
+            class="btn material-symbols-outlined"
+            data-add-random="false"
+            data-child-type="{{childType}}"
+            data-event-type="add"
+    >
+        add
+    </button>
 </div>
+
+<!-- Subchildren will be appended here by SpyneJS when the user clicks "add" -->
 <div class="children"></div>
