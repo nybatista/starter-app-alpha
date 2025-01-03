@@ -1,4 +1,22 @@
+<!-- meme.tmpl.html -->
+<!--
+  This snippet populates the meme layout.
+  Each double-braced expression {{...}} is replaced by the corresponding property
+  from props.data.
+-->
 <img src="{{message}}" alt="random doggo" />
+<!--
+  'message' corresponds to the image URL, e.g.
+-->
 <figcaption>
-  <blockquote>“{{content}}” <cite>—{{author}}</cite></blockquote>
+  <blockquote>
+    <!--
+          'content' is the text quote for the meme.
+        -->
+    “{{content}}”
+    <!--
+          'author' property is displayed after a dash in the <cite>.
+        -->
+    <cite>—{{author}}</cite>
+  </blockquote>
 </figcaption>
