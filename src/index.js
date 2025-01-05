@@ -10,7 +10,7 @@ const config = {
 SpyneApp.init(config);
 
 if (process.env.NODE_ENV === 'development') {
-  //import('./dev-tools.js');
+  import('./dev-tools.js');
 }
 
 new AppView().appendToDom(document.querySelector('body'));

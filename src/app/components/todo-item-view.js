@@ -32,8 +32,6 @@ export class TodoItemView extends ViewStream {
   }
 
   onItemEvent(e) {
-    console.log('ON ITEM EVENT ', e);
-
     const { action } = e.payload;
     if (action === 'edit') {
       this.todos$StartEditMode();
