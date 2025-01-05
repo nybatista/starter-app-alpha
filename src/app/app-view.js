@@ -1,5 +1,5 @@
 import { ViewStream } from 'spyne';
-import { HelloWorldView } from 'components/hello-world-view.js';
+import { TodoListView } from 'components/todo-list-view.js';
 
 export class AppView extends ViewStream {
   constructor(props = {}) {
@@ -18,6 +18,6 @@ export class AppView extends ViewStream {
   }
 
   onRendered() {
-    this.appendView(new HelloWorldView(), '#examples');
+    this.appendView(new TodoListView(), '#examples');
   }
 }

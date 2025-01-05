@@ -1,6 +1,6 @@
 @use '01-vendors/normalize.css';
 @use '02-variables/mixins.scss';
-
+@use '03-components/todo-app.scss';
 body {
   margin: 0; // Remove default body margin
   min-height: 100vh; // Ensures the background color covers full height
