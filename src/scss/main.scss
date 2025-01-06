@@ -3,27 +3,28 @@
 @use '03-components/todo-app.scss';
 body {
   margin: 0; // Remove default body margin
-  min-height: 100vh; // Ensures the background color covers full height
   font-family: sans-serif; // Or your preferred font stack
-  background: #cbd2d9; // Subtle gray
+  background: #1d1f21; // Subtle gray
   color: #333; // Dark text for contrast
 }
 
 main#app {
   max-width: 960px; // Constrain content width on larger screens
   margin: 0 auto; // Center the main content
-  padding: 1rem; // Basic padding around content
+  //padding: 1rem; // Basic padding around content
   box-sizing: border-box; // Helps keep consistent sizing
 }
 
 #examples {
-  padding: 1.5rem;
-  background: whitesmoke; // White background for contrast
-  border-radius: 6px; // Subtle rounded corners
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Simple shadow for some depth
-  margin-bottom: 1.5rem; // Space below the Hello World section
+  //padding: 1.5rem;
+  //background: whitesmoke; // White background for contrast
+  //border-radius: 6px; // Subtle rounded corners
+ // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Simple shadow for some depth
+ // margin-bottom: 1.5rem; // Space below the Hello World section
+  display: flex;
+  margin: 1rem;
   h2,
   p {
-    margin: 1rem 0;
+    margin: .5rem 0;
   }
 }

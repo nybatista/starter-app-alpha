@@ -1,29 +1,23 @@
-<div class="todo-item">
-  <p class="todo-text">{{text}}</p>
+<p class="todo-text">{{text}}</p>
 
-  <!-- Hidden by default until editing -->
-  <input class="edit-input" type="text" style="display: none" />
+<input class="edit-input" type="text" />
 
-  <div class="buttons-holder">
+<div class="buttons-holder">
     <button
-      class="edit-btn"
-      data-action="edit"
-      data-todo-id="{{todoId}}"
-    >
-      Edit
-    </button>
-
-    <button class="remove-btn" data-action="remove" data-todo-id="{{todoId}}">
-      Remove
+            class="edit-btn"
+            data-action="edit"
+            data-todo-id="{{todoId}}">Edit
     </button>
 
     <button
-      class="end-edit"
-      data-action="endEdit"
-      data-todo-id="{{todoId}}"
-      style="display: none"
-    >
-      Done
+            class="remove-btn"
+            data-action="remove"
+            data-todo-id="{{todoId}}">Remove
     </button>
-  </div>
+
+    <button
+            class="end-edit"
+            data-action="endEdit"
+            data-todo-id="{{todoId}}">Done
+    </button>
 </div>
