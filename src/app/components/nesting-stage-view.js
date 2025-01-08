@@ -24,7 +24,7 @@ export class NestingStage extends ViewStream {
 -->
   <button class="btn reset" data-reset="true" data-add-random="false" 
           data-child-type="reset" data-event-type="reset">
-    <span class="material-symbols-outlined">refresh</span>
+    <span class="material-symbols-outlined">&#xE5D5</span>
   </button>
 </div>
 `;
