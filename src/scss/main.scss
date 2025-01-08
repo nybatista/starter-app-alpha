@@ -1,6 +1,5 @@
 @use '01-vendors/normalize.css';
 @use '02-variables/mixins.scss';
-@use '03-components/meme-generator.scss';
 @use '03-components/nesting.scss';
 /* Variables */
 :root {
@@ -36,4 +35,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--fg-color);
+  display: flex;
+  justify-content: start;
 }
