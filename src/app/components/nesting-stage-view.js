@@ -19,9 +19,6 @@ export class NestingStage extends ViewStream {
     // A small heading for context, plus the reset button
     props.template = `
 <div class="title-bar">
-<!--
-  <h2>Reset</h2>
--->
   <button class="btn reset" data-reset="true" data-add-random="false" 
           data-child-type="reset" data-event-type="reset">
     <span class="material-symbols-outlined">&#xE5D5</span>
@@ -46,7 +43,6 @@ export class NestingStage extends ViewStream {
   }
 
   /**
-   * onRendered runs after the DOM element (#nesting-example) has been attached.
    * We immediately add a top-level “universe” node, along with random children,
    * to kick off the nesting demo.
    */
