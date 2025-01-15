@@ -78,7 +78,7 @@ export class NestingTraits extends SpyneTrait {
     const ranWeightHash = {
       website: [1], // Often add 2 children
       page: [1, 1, 1, 2, 2, 3], // Possibly add 1-3 children, with 2 being common
-      'section': [1, 1, 2, 2],
+      section: [1, 1, 2, 2],
       component: [1, 1, 1, 2],
       ggc1: [1, 1, 1, 0],
       widget: [1, 1, 0, 0],

@@ -40,10 +40,9 @@
       flex: 1; // let the heading take all available space
       margin: 0;
       font-size: 1rem;
-
     }
     span.material-symbols-outlined {
-     // font-size: 1.25rem;
+      // font-size: 1.25rem;
     }
     .btn.reset {
       // the existing styling for your reset button
@@ -53,9 +52,9 @@
   p {
     color: #666;
     padding: 0 0.125rem;
-    margin:0 0 .0625rem 0;
+    margin: 0 0 0.0625rem 0;
     font-weight: 400;
-    font-size: .875rem;
+    font-size: 0.875rem;
     text-transform: capitalize;
   }
 
@@ -66,10 +65,10 @@
       color: palette.$Neutral-075;
       text-transform: uppercase;
       margin-bottom: 5px;
-
+      display: none;
     }
 
-    & > div.controls{
+    & > div.controls {
       display: none;
     }
   }
@@ -97,8 +96,7 @@
   }
 
   .cta {
-
-    p{
+    p {
       text-transform: uppercase;
     }
     .controls {
@@ -130,10 +128,10 @@
     .children {
       display: flex;
     }
-    .ui-element{
+    .ui-element {
       background: #000;
       display: flex;
-      font-size: .875rem;
+      font-size: 0.875rem;
       align-items: center;
       justify-content: center;
       text-transform: capitalize;

@@ -76,9 +76,15 @@ export class NestingChildView extends ViewStream {
    */
   onRendered() {
     this.nestPlayground$RandomAddChildCheck();
-    if (this.props.data.childType==='website'){
-      this.appendViewAfter(new ViewStream({class:'ui-element', data: 'header'}), 'p')
-      this.appendViewAfter(new ViewStream({class:'ui-element', data: 'footer'}), '.children');
+    if (this.props.data.childType === 'website') {
+      this.appendViewAfter(
+        new ViewStream({ class: 'ui-element', data: 'header' }),
+        'p',
+      );
+      this.appendViewAfter(
+        new ViewStream({ class: 'ui-element', data: 'footer' }),
+        '.children',
+      );
     }
   }
 }
