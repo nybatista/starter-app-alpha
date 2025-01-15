@@ -7,12 +7,12 @@ export class NestingStage extends ViewStream {
     props.vsid = 'reset';
     props.traits = [NestingTraits];
     props.childTypeArr = [
-      'galaxy',
-      'solar-system',
-      'planet',
-      'moon',
-      'asteroid',
-      'alien',
+      'page',
+      'section',
+      'component',
+      'widget',
+      'element',
+      'cta',
     ];
     props.addRandom = true;
 
@@ -31,9 +31,9 @@ export class NestingStage extends ViewStream {
 
   addActionListeners() {
     return [
-      // When user clicks the .reset button, call nestPlayground$AddUniverseNode
+      // When user clicks the .reset button, call nestPlayground$AddwebsiteNode
       // (thus triggering a reset).
-      ['CHANNEL_UI_CLICK_EVENT', 'nestPlayground$AddUniverseNode', '.reset'],
+      ['CHANNEL_UI_CLICK_EVENT', 'nestPlayground$AddwebsiteNode', '.reset'],
     ];
   }
 
@@ -43,11 +43,11 @@ export class NestingStage extends ViewStream {
   }
 
   /**
-   * We immediately add a top-level “universe” node, along with random children,
+   * We immediately add a top-level “website” node, along with random children,
    * to kick off the nesting demo.
    */
   onRendered() {
-    this.nestPlayground$AddUniverseNode();
+    this.nestPlayground$AddwebsiteNode();
     this.addChannel('CHANNEL_UI');
   }
 }

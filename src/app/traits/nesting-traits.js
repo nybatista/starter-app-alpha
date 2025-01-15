@@ -2,7 +2,7 @@ import { SpyneTrait } from 'spyne';
 import { NestingChildView } from 'components/nesting-child-view.js';
 
 /**
- * Manages creation and disposal of nested ViewStream instances (e.g., universe → galaxy → solar-system).
+ * Manages creation and disposal of nested ViewStream instances (e.g., website → page → section).
  * Includes randomization logic to automatically add multiple children upon load/reset.
  */
 export class NestingTraits extends SpyneTrait {
@@ -13,7 +13,7 @@ export class NestingTraits extends SpyneTrait {
 
   /**
    * Handles "nesting event" actions: 'reset' or 'add' / 'remove'.
-   * If eventType is 'reset' on the top-level (e.g., 'universe'), we dispose.
+   * If eventType is 'reset' on the top-level (e.g., 'website'), we dispose.
    * Otherwise, we either add a child or remove this instance.
    */
   static nestPlayground$OnNestingEvent(e, props = this.props) {
@@ -24,7 +24,7 @@ export class NestingTraits extends SpyneTrait {
 
     if (eventType === 'reset') {
       // If top-level, remove the entire nested structure
-      if (this.props.data.childType === 'universe') {
+      if (this.props.data.childType === 'website') {
         this.disposeViewStream();
       }
       return;
@@ -57,10 +57,10 @@ export class NestingTraits extends SpyneTrait {
   }
 
   /**
-   * Creates a new top-level "universe" node with random additions (if needed).
+   * Creates a new top-level "website" node with random additions (if needed).
    * Typically invoked to start the nesting chain.
    */
-  static nestPlayground$AddUniverseNode() {
+  static nestPlayground$AddwebsiteNode() {
     this.appendView(
       new NestingChildView({
         addRandom: true,
@@ -70,18 +70,18 @@ export class NestingTraits extends SpyneTrait {
 
   /**
    * Weighted random logic to decide how many times to add another child.
-   * e.g., if childType= "galaxy", we might add 2 or 3 children more frequently.
+   * e.g., if childType= "page", we might add 2 or 3 children more frequently.
    */
   static nestPlayground$GetRandomAddCount(
     childType = this.props.data.childType,
   ) {
     const ranWeightHash = {
-      universe: [2, 1], // Often add 2 children
-      galaxy: [1, 1, 1, 2, 2, 3], // Possibly add 1-3 children, with 2 being common
-      'solar-system': [0, 1, 2, 2],
-      planet: [1, 1, 1, 0],
-      ggc1: [1, 0, 0, 0],
-      moon: [1, 0, 0, 0],
+      website: [1], // Often add 2 children
+      page: [1, 1, 1, 2, 2, 3], // Possibly add 1-3 children, with 2 being common
+      'section': [1, 1, 2, 2],
+      component: [1, 1, 1, 2],
+      ggc1: [1, 1, 1, 0],
+      widget: [1, 1, 0, 0],
     };
 
     const defaultWeight = [1, 0]; // Fallback to either 1 or 0 children

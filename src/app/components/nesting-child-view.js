@@ -3,7 +3,7 @@ import { NestingTraits } from 'traits/nesting-traits.js';
 import NestingChildTmpl from './templates/nesting-child.tmpl.html';
 
 /**
- * Each NestingChildView represents one level (universe, galaxy, planet, etc.)
+ * Each NestingChildView represents one level (website, page, component, etc.)
  * in the nested ViewStream hierarchy. It:
  *  - Applies NestingTraits for add/remove logic.
  *  - Filters UI click events so only buttons belonging to this instance (or reset) trigger actions.
@@ -15,20 +15,20 @@ export class NestingChildView extends ViewStream {
     props.traits = [NestingTraits];
 
     // Provide default data in case none was passed
-    props.data ??= { childType: 'universe' };
+    props.data ??= { childType: 'website' };
     // Whether to add random sub-children automatically
     props.addRandom ??= false;
     // The queue of possible child types to nest further
     props.childTypeArr ??= [
-      'galaxy',
-      'solar-system',
-      'planet',
-      'moon',
-      'asteroid',
-      'alien',
+      'page',
+      'section',
+      'component',
+      'widget',
+      'element',
+      'cta',
     ];
 
-    // Use a CSS class reflecting the child's type, e.g. "branch universe"
+    // Use a CSS class reflecting the child's type, e.g. "branch website"
     props.class = `branch ${props.data.childType}`;
 
     // The HTML template used by SpyneJS to render controls, child area, etc.
@@ -76,5 +76,9 @@ export class NestingChildView extends ViewStream {
    */
   onRendered() {
     this.nestPlayground$RandomAddChildCheck();
+    if (this.props.data.childType==='website'){
+      this.appendViewAfter(new ViewStream({class:'ui-element', data: 'header'}), 'p')
+      this.appendViewAfter(new ViewStream({class:'ui-element', data: 'footer'}), '.children');
+    }
   }
 }
