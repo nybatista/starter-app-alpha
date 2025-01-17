@@ -1,7 +1,7 @@
 {
-  "name": "spyne-hello-world-app",
-  "version": "0.6.0",
-  "description": "SpyneJS Starter Application",
+  "name": "spyne-base-app",
+  "version": "1.0.0",
+  "description": "SpyneJS Base Application",
   "main": "src/index.js",
   "type": "module",
   "scripts": {

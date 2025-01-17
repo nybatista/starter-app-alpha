@@ -5,34 +5,36 @@
 );
 
 body {
-  padding: 1rem;
-  min-height: 100vh;
-  font-family: sans-serif;
+  height: 100vh;
+  padding: 0 1rem;
   background: #cbd2d9;
   color: #333;
 }
 
 main#app {
+  position: relative;
+  top: 1rem;
   max-width: 960px;
   min-height: 200px;
-  margin: 1rem auto;
+  margin:  auto;
   box-sizing: border-box;
   background: whitesmoke;
   padding: 1.5rem;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
 }
 
 #hello-world {
+  font-size: 16px;
+  font-family: Monaco, monospace;
   h2,
   p {
     margin: 0;
+  }
+  h2{
+    font-weight: 600;
     font-family: 'Borel', monospace;
+
   }
 
-  h2 {
-    background-size: contain;
-    margin: 1rem 0;
-  }
 }
