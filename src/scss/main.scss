@@ -1,29 +1,42 @@
 @use '01-vendors/normalize.css';
 @use '02-variables/mixins.scss';
+@use '02-variables/fonts' with (
+  $STATIC_DIR: $STATIC_DIR // or whatever relative path you need
+);
 
 body {
-  margin: 0; // Remove default body margin
-  min-height: 100vh; // Ensures the background color covers full height
-  font-family: sans-serif; // Or your preferred font stack
-  background: #cbd2d9; // Subtle gray
-  color: #333; // Dark text for contrast
+  margin: 0;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background: #cbd2d9;
+  color: #333;
 }
 
 main#app {
-  max-width: 960px; // Constrain content width on larger screens
-  margin: 0 auto; // Center the main content
-  padding: 1rem; // Basic padding around content
-  box-sizing: border-box; // Helps keep consistent sizing
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 #hello-world {
   padding: 1.5rem;
-  background: whitesmoke; // White background for contrast
-  border-radius: 6px; // Subtle rounded corners
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Simple shadow for some depth
-  margin-bottom: 1.5rem; // Space below the Hello World section
+  background: whitesmoke;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+
   h2,
   p {
     margin: 0;
+    font-family: 'Borel', monospace;
+  }
+
+  h2 {
+    // background: url("#{$STATIC_DIR}/imgs/noun-bird.svg") no-repeat;
+
+    background-size: contain;
+    margin: 1rem 0;
+    // font-size: 2.5rem;
   }
 }

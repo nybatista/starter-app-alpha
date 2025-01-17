@@ -19,6 +19,8 @@ let _publicPath;
 let _assetsFolder;
 let _imgPath;
 let _iframesPath;
+//let _staticDir;
+//let _fontsDir;
 let _testMode = false;
 
 // Resolve __dirname for ES modules
@@ -35,6 +37,9 @@ export default (env = { mode: 'development' }) => {
   _publicPath = _isProduction ? _relativeRoot : '/';
   _assetsFolder = _isProduction ? `${_defaultAssetsDirName}/` : '';
   _imgPath = `${_publicPath}${_assetsFolder}static/imgs/`;
+  // _staticDir = `${_publicPath}${_assetsFolder}static/`;
+  // _fontsDir = `${_publicPath}${_assetsFolder}static/fonts/`;
+  const sassStaticDir = _isProduction ? `././../static/` : './static/';
   _iframesPath = `${_publicPath}${_assetsFolder}static/iframes/`;
   _testMode = mode === 'none';
 
@@ -56,7 +61,7 @@ export default (env = { mode: 'development' }) => {
     },
 
     // Source map settings (can tweak as needed)
-    devtool: _isProduction ? 'cheap-source-map' : 'cheap-source-map',
+    devtool: _isProduction ? 'source-map' : 'source-map',
 
     // Webpack Dev Server config
     devServer: {
@@ -102,11 +107,23 @@ export default (env = { mode: 'development' }) => {
               : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
-              options: { sourceMap: true },
+              options: {
+                sourceMap: true,
+                url: false,
+              },
             },
+
             {
               loader: 'sass-loader',
-              options: { sourceMap: true },
+              options: {
+                sourceMap: true,
+                additionalData:
+                  '$STATIC_DIR: ' + JSON.stringify(sassStaticDir) + ';',
+                sassOptions: {
+                  fiber: false,
+                  includePaths: [`${_assetsFolder}static/fonts/`],
+                },
+              },
             },
           ],
         },
@@ -120,6 +137,9 @@ export default (env = { mode: 'development' }) => {
         {
           test: /\.(png|jpe?g|gif)$/i,
           type: 'asset',
+          generator: {
+            filename: `${_assetsFolder}static/imgs/[name].[ext]`,
+          },
         },
         {
           test: /\.json$/,
@@ -184,6 +204,7 @@ function getWebpackPlugins() {
   const getCopyPatternsPlugin = () => {
     const patterns = [
       { from: './src/static/imgs', to: `${_assetsFolder}static/imgs` },
+      { from: './src/static/fonts', to: `${_assetsFolder}static/fonts` },
     ];
 
     if (_buildType === 'apache') {
