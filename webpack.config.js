@@ -168,7 +168,7 @@ export default (env = { mode: 'development' }) => {
         svgs: path.resolve(__dirname, 'src/static/imgs/svgs/'),
         iframes: path.resolve(__dirname, 'src/static/iframes/'),
         fonts: path.resolve(__dirname, 'src/static/fonts/'),
-        data: path.resolve(__dirname, '/./src/static/data/'), // Possibly simplify
+        data: path.resolve(__dirname, 'src/static/data/'), // Possibly simplify
         css: path.resolve(__dirname, 'src/css/'),
         core: path.resolve(__dirname, 'src/core/'),
         traits: path.resolve(__dirname, 'src/app/traits/'),

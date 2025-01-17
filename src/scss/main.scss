@@ -5,7 +5,7 @@
 );
 
 body {
-  margin: 0;
+  padding: 1rem;
   min-height: 100vh;
   font-family: sans-serif;
   background: #cbd2d9;
@@ -14,18 +14,17 @@ body {
 
 main#app {
   max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
+  min-height: 200px;
+  margin: 1rem auto;
   box-sizing: border-box;
-}
-
-#hello-world {
-  padding: 1.5rem;
   background: whitesmoke;
+  padding: 1.5rem;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
+}
 
+#hello-world {
   h2,
   p {
     margin: 0;
@@ -33,10 +32,7 @@ main#app {
   }
 
   h2 {
-    // background: url("#{$STATIC_DIR}/imgs/noun-bird.svg") no-repeat;
-
     background-size: contain;
     margin: 1rem 0;
-    // font-size: 2.5rem;
   }
 }
