@@ -13,15 +13,18 @@ body {
 
 main#app {
   position: relative;
-  top: 1rem;
-  max-width: 960px;
-  min-height: 200px;
-  margin:  auto;
-  box-sizing: border-box;
-  background: whitesmoke;
-  padding: 1.5rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &.hello-world {
+    top: 1rem;
+    max-width: 960px;
+    min-height: 200px;
+    margin: auto;
+    box-sizing: border-box;
+    background: whitesmoke;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
 }
 
 #hello-world {
@@ -31,10 +34,11 @@ main#app {
   p {
     margin: 0;
   }
-  h2{
+  h2 {
     font-weight: 600;
     font-family: 'Borel', monospace;
-
   }
 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
