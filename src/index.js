@@ -4,7 +4,7 @@ import { AppView } from './app/app-view.js';
 
 const config = {
   debug: true,
-  strict: true,
+  strict: false,
 };
 
 SpyneApp.init(config);

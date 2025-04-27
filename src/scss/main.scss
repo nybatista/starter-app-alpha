@@ -8,11 +8,12 @@ body {
   height: 100vh;
   padding: 0 1rem;
   background: #cbd2d9;
-  color: #333;
+  color: #374151;
 }
 
 main#app {
   position: relative;
+  font-family: fonts.$fontRg;
 
   &.hello-world {
     top: 1rem;
@@ -29,14 +30,12 @@ main#app {
 
 #hello-world {
   font-size: 16px;
-  font-family: Monaco, monospace;
   h2,
   p {
     margin: 0;
   }
   h2 {
-    font-weight: 600;
-    font-family: 'Borel', monospace;
+    font-family: fonts.$fontBd;
   }
 
   -webkit-font-smoothing: antialiased;

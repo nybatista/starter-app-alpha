@@ -9,7 +9,7 @@ export class HelloWorld extends ViewStream {
   }
 
   addActionListeners() {
-    return [['CHANNEL_HELLO_WORLD_DATA_EVENT', 'addHelloWorld']];
+    return [['CHANNEL_HELLO_WORLD_RESPONSE_EVENT', 'addHelloWorld']];
   }
 
   broadcastEvents() {

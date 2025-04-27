@@ -8,4 +8,13 @@ $STATIC_DIR: '' !default;
   }
 }
 
-@include addFontFace('Borel', 'fonts/Borel-Regular');
+@include addFontFace('Inter', 'fonts/inter/Inter-VariableFont_opsz,wght');
+@include addFontFace('Inter-Bold', 'fonts/inter/Inter_18pt-Bold.ttf');
+@include addFontFace(
+  'Inter-Italic',
+  'fonts/inter/Inter-Italic-VariableFont_opsz,wght'
+);
+
+$fontRg: 'Inter', system-ui, sans-serif;
+$fontBd: 'Inter-Bold', system-ui, sans-serif;
+$fontIl: 'Inter-Ital', system-ui, sans-serif;
