@@ -1,31 +1,67 @@
+
 # SpyneJS Starter App
 
 **Repository:** [spynejs-starter-app](https://github.com/nybatista/spynejs-starter-app.git)
 
-A production-ready template for building **SpyneJS** applications. This repository serves as a quick start—cloned directly or generated via [`spyne-cli`](https://www.npmjs.com/package/spyne-cli).
+A clean, production-ready template for building **SpyneJS** applications.  
+Start new projects quickly with a structure that reflects the View–Behavior–Logic (VBL) architecture from the very first line of code.
+
+This starter can be cloned directly or generated via [`spyne-cli`](https://www.npmjs.com/package/spyne-cli).
+
+---
 
 ## Features
 
-- **Webpack Dev/Prod Environments**
-    - Hot reload with `npm start`, optimized builds with `npm run build`.
+**VBL Architecture by Default**
+- ViewStreams, Channels, and Traits cleanly separated from day one.
 
-- **SpyneJS “VBL” Structure**
-    - Encourages the View–Behavior–Logic pattern out of the box.
+**Webpack Development and Production Environments**
+- Hot reloading with `npm start`, optimized production builds with `npm run build`.
+- Dynamic static asset handling (`/imgs/` prefix).
 
-- **SCSS Integration**
-    - Out-of-the-box SASS/SCSS support for styling.
+**Static Directory for Content**
+- Fonts, images, and other assets load cleanly in both development and production modes.
 
-- **Unit Testing**
-    - Preconfigured with Web-Test-Runner using Mocha & Chai.
+**SCSS Integration**
+- SASS/SCSS support out of the box for scalable styling.
 
-- **Linting / Formatting**
-    - ESLint rules + recommended formatting for consistent code style.
+**Unit Testing with Web Test Runner**
+- Preconfigured Mocha & Chai testing environment.
+
+**Linting and Formatting**
+- ESLint rules for consistent code quality and formatting.
+
+---
 
 ## Getting Started
 
-1. **Clone or Install**
+```bash
+git clone https://github.com/nybatista/spynejs-starter-app.git
+cd spynejs-starter-app
+npm install
+npm start
+```
 
-   ```bash
-   git clone https://github.com/nybatista/spynejs-starter-app.git
-   cd spynejs-starter-app
-   npm install
+---
+
+## What's Inside
+
+- `/src/app/` — Main application files (ViewStreams, Traits, Channels)
+- `/static/` — Static assets like fonts and images
+- `/scss/` — SASS/SCSS styling files
+- `/tests/` — Unit tests configured for Web Test Runner
+
+---
+
+## Documentation
+
+Learn more about SpyneJS and its architecture at:  
+[https://spynejs.com/docs](https://spynejs.com/docs)
+
+---
+
+## License
+
+MIT © 2025 Frank Batista, Relevant Context LLC
+
+---
