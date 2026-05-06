@@ -9,7 +9,7 @@ $STATIC_DIR: '' !default;
 }
 
 @include addFontFace('Inter', 'fonts/inter/Inter-VariableFont_opsz,wght');
-@include addFontFace('Inter-Bold', 'fonts/inter/Inter_18pt-Bold.ttf');
+@include addFontFace('Inter-Bold', 'fonts/inter/Inter_18pt-Bold');
 @include addFontFace(
   'Inter-Italic',
   'fonts/inter/Inter-Italic-VariableFont_opsz,wght'
