@@ -1,14 +1,13 @@
 {
-  "name": "spyne-base-app",
+  "name": "application-starter",
   "version": "1.0.0",
-  "description": "SpyneJS Base Application",
+  "description": "SpyneJS Application Starter — minimal application template",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack --mode production --env build",
     "build:apache": "buildType=apache webpack --mode production --env build",
-    "installLinks": "npm link spyne spyne-plugin-console",
     "test": "web-test-runner --config web-test-runner.config.js",
     "lint": "eslint --config eslint.config.js",
     "lint:fix": "eslint --config eslint.config.js --fix",
@@ -63,9 +62,9 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/spynejs/application-starter"
   },
-  "author": "",
+  "author": "SpyneJS",
   "license": "MIT",
-  "homepage": ""
+  "homepage": "https://spynejs.com"
 }

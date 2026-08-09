@@ -1,67 +1,73 @@
+# Application Starter
 
-# SpyneJS Starter App
+A minimal SpyneJS application template: an entry point, a root view, and a
+hello-world component demonstrating text, an image, a link, and a webfont. Use
+it as the starting point for a new application.
 
-**Repository:** [spynejs-starter-app](https://github.com/nybatista/spynejs-starter-app.git)
+For a template that already includes pages, navigation, and UI components, see
+[application-shell](https://github.com/spynejs/application-shell).
 
-A clean, production-ready template for building **SpyneJS** applications.  
-Start new projects quickly with a structure that reflects the View–Behavior–Logic (VBL) architecture from the very first line of code.
+## Requirements
 
-This starter can be cloned directly or generated via [`spyne-cli`](https://www.npmjs.com/package/spyne-cli).
+Node.js 18 or newer.
 
----
-
-## Features
-
-**VBL Architecture by Default**
-- ViewStreams, Channels, and Traits cleanly separated from day one.
-
-**Webpack Development and Production Environments**
-- Hot reloading with `npm start`, optimized production builds with `npm run build`.
-- Dynamic static asset handling (`/imgs/` prefix).
-
-**Static Directory for Content**
-- Fonts, images, and other assets load cleanly in both development and production modes.
-
-**SCSS Integration**
-- SASS/SCSS support out of the box for scalable styling.
-
-**Unit Testing with Web Test Runner**
-- Preconfigured Mocha & Chai testing environment.
-
-**Linting and Formatting**
-- ESLint rules for consistent code quality and formatting.
-
----
-
-## Getting Started
+## Getting started
 
 ```bash
-git clone https://github.com/nybatista/spynejs-starter-app.git
-cd spynejs-starter-app
+git clone https://github.com/spynejs/application-starter.git my-app
+cd my-app
+rm -rf .git && git init
 npm install
 npm start
 ```
 
----
+`npm start` runs the webpack dev server with hot reload.
 
-## What's Inside
+## Scripts
 
-- `/src/app/` — Main application files (ViewStreams, Traits, Channels)
-- `/static/` — Static assets like fonts and images
-- `/scss/` — SASS/SCSS styling files
-- `/tests/` — Unit tests configured for Web Test Runner
+| Script | Description |
+| --- | --- |
+| `npm start` | Development server with hot reload |
+| `npm run build` | Production build into `dist/` |
+| `npm run build:apache` | Production build with an Apache `.htaccess` |
+| `npm test` | Unit tests via Web Test Runner |
+| `npm run lint` | ESLint |
+| `npm run lint:fix` | ESLint with autofix |
+| `npm run format` | Prettier over `src/` |
 
----
+## Structure
 
-## Documentation
+```
+src/
+  app/
+    channels/      Channels — event flow and application state
+    components/    ViewStreams — the hello-world component lives here
+    traits/        SpyneTraits — reusable behaviour
+  scss/            Styles
+  static/          Data, fonts, and images
+  index.js         Application entry: config and the root view
+```
 
-Learn more about SpyneJS and its architecture at:  
-[https://spynejs.com/docs](https://spynejs.com/docs)
+SpyneJS separates rendering (`ViewStream`), event flow (`Channel`), and
+behaviour (`SpyneTrait`). Components are organised by those roles rather than by
+feature.
 
----
+## Generating modules
+
+With [spyne-cli](https://github.com/spynejs/spyne-cli) you can generate new
+modules inside this project:
+
+```bash
+npx spyne-cli
+```
+
+## Deployment
+
+The build output in `dist/` is a static single-page application. All application
+routes must resolve to `index.html`, and requests for static assets must be
+served directly.
 
 ## License
 
-MIT © 2025 Frank Batista, Relevant Context LLC
-
----
+MIT — see [LICENSE](LICENSE). Bundled Inter fonts are licensed under the SIL
+Open Font License 1.1; see `src/static/fonts/inter/OFL.txt`.

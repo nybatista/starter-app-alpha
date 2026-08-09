@@ -219,6 +219,9 @@ function getWebpackPlugins() {
   };
 
   const eslintPlugin = new ESLintPlugin({
+    // ESLint 9 flat config. Without this the plugin looks for a legacy
+    // .eslintrc and fails, ignoring eslint.config.js entirely.
+    configType: 'flat',
     extensions: ['js'],
     fix: false,
     emitWarning: true,
